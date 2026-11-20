@@ -1,47 +1,38 @@
-VYOM DOMAIN-READY SITE
-======================
+VYOM MENU REVAMP — CUSTOMER MENU + STAFF POS
+============================================
 
-FILES TO UPLOAD TO THE ROOT OF THE EXISTING GITHUB REPOSITORY:
-- index.html               Hostel brand homepage
-- customer.html            Cafe customer menu + WhatsApp checkout
-- pos.html                 Staff POS (renamed from original POS index.html)
-- menu-beverages.jpg       Supplied menu image
-- menu-platters.jpg        Supplied menu image
-- vyom-cafe-qr.png         QR target: https://vyomhostel.com/customer.html
-- vyom-cafe-qr-poster.pdf  A5 print poster with same QR
+Files to upload to the ROOT of existing GitHub repository:
+- customer.html  Updated customer-facing QR menu and WhatsApp checkout
+- pos.html       Updated staff POS menu and billing
 
-URL STRUCTURE AFTER CUSTOM DOMAIN + GITHUB PAGES ARE CONNECTED:
-- Hostel homepage: https://vyomhostel.com/
-- Cafe menu:       https://vyomhostel.com/customer.html
-- Staff POS:       https://vyomhostel.com/pos.html
+Do not replace index.html (hostel homepage). Do not remove cafe menu photos or any other repository files.
 
-WHATSAPP:
-The customer menu has WA recipient +91 73403 36308. Customer taps Place Order,
-WhatsApp opens with name, items, total and payment method prefilled; customer must
-tap Send. This is click-to-chat, NOT automated WhatsApp API delivery. Current POS
-does not automatically receive website/WhatsApp orders across devices. The POS
-prototype stores staff data locally in that browser.
+PROPOSED SELLING PRICES (INR)
+- Poha stays at ₹110.
+- Regular breakfast and beverages remain accessible, with small alignment adjustments.
+- Platters and thalis now reflect full meal portions and more complete accompaniments.
+- “Unlimited Backpacker Thali” is renamed “Backpacker Thali” at ₹279 because the previous description did not define unlimited refills or a fixed serving. Only use “Unlimited” if the kitchen genuinely offers unlimited refills and has food-costed the offer.
+- Special Thali ₹329.
+- Added six vegetarian Chinese dishes: Veg Hakka Noodles ₹219; Chilli Garlic Noodles ₹229; Veg Fried Rice ₹199; Honey Chilli Potato ₹239; Veg Manchurian (Dry/Gravy) ₹259; Chilli Paneer (Dry/Gravy) ₹289.
 
-GITHUB PAGES CUSTOM DOMAIN:
-1. Upload/replace these files in the repository root. Do not place them in a nested folder.
-2. GitHub repo: shashank29296-star/vyom-cafe-ordering
-3. Settings -> Pages -> Custom domain: vyomhostel.com -> Save.
-4. In the registrar's DNS manager add:
-   A     @     185.199.108.153
-   A     @     185.199.109.153
-   A     @     185.199.110.153
-   A     @     185.199.111.153
-   CNAME www   shashank29296-star.github.io
-   TTL Auto/default.
-5. Keep existing MX and TXT records (email verification / mail) intact. Do not delete unrelated records.
-6. If another active website is already using the root domain, changing @ A records will route it to GitHub Pages. Check before changing.
-7. After DNS resolves, GitHub Settings -> Pages -> Enforce HTTPS.
+Pricing benchmark was cross-checked against public Pushkar menu data. For example, Nutmeg Cafe lists Hakka noodles ₹250, garlic noodles ₹270, chilli paneer ₹370, veg Manchurian ₹320 and fried rice ₹200; Om Shiva Garden lists chilli paneer ₹200, veg Manchurian ₹180–200, veg fried rice ₹170 and Schezwan chowmein ₹200. Public Pushkar thali examples include ₹270 and ₹320. VYOM's proposal sits in a mid-range backpacker-cafe position rather than matching either the cheapest restaurant or the premium cafe. Actual margin cannot be guaranteed without ingredient, portion, labour and overhead costing.
 
-The domain/DNS has not been configured by this package. Do not print the new QR
-until https://vyomhostel.com/customer.html opens successfully on a phone.
+Operational notes:
+- All Chinese items are vegetarian.
+- For dry/gravy dishes, customer can specify preference in order notes.
+- POS and customer menu now use the same item order and prices.
+- Existing WhatsApp click-to-chat recipient remains +91 73403 36308. Customer still needs to tap Send in WhatsApp.
+- This does not yet add cloud syncing or automatic kitchen ticket routing.
 
-IMAGE AND CONTENT NOTE:
-The homepage uses externally hosted photo URLs as in the latest backpacker design.
-Check photo reuse permissions before commercial publication.
+Deploy:
+1. Open the existing repository: shashank29296-star/vyom-cafe-ordering.
+2. Upload ONLY customer.html and pos.html from this package into the repository root, replacing files with matching names.
+3. Do not replace index.html or remove other site files.
+4. Commit changes. GitHub Pages redeploys automatically.
+5. Test https://vyomhostel.com/customer.html and https://vyomhostel.com/pos.html after deploy.
 
-WhatsApp number should be confirmed as the correct cafe/hostel contact before launch.
+Prices are proposed menu prices, not audited food-cost prices. Run a recipe cost calculation and check supplier rates before printing the menu.
+
+MENU UPDATE (20 NOV 2026)
+- Added Honey Chilli Potato to the Chinese category at ₹239. Description: Crispy potato fingers tossed in sticky honey-chilli sauce, finished with sesame and spring onion.
+- The customer menu and staff POS have matching item and price entries.
